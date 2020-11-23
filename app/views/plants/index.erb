@@ -1,6 +1,8 @@
 
 <p> <% @plants.each do |p| %>
-    <%= p.name %> <br />
-    <%= p.kind %> <br />
+    Plant: <%= p.name %> <br />
+    Kind: <%= p.kind %> <br />
     <a href="/plants/<%=p.id%>/edit">Edit</a>
+    <br />
+    <br />
 <% end %>
