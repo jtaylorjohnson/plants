@@ -16,7 +16,7 @@ class PlantsController < ApplicationController
 
   post "/plants" do
     redirect_if_not_logged_in
-    Plant.create(name:)
+    Plant.create(params)
     redirect "/plants"
   end
 

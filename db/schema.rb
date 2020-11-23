@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20201123002944) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "kind"
   end
 
   create_table "users", force: :cascade do |t|
