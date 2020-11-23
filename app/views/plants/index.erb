@@ -1,5 +1,6 @@
-<% @plants.each do |p| %>
-    <%= p.name %><br />
+
+<p> <% @plants.each do |p| %>
+    <%= p.name %> <br />
     <%= p.type %> <br />
     <a href="/plants/<%=p.id%>/edit">Edit</a>
 <% end %>
