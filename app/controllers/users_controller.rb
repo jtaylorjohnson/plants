@@ -14,7 +14,11 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
+    if logged_in?
+      "You're logged in already."
+    else
       erb :'users/new'
+    end
   end
 
   post '/signup' do 
@@ -24,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do 
-    if !session[:user_id]
+    if !logged_in?
       erb :'users/login'
     else
       redirect '/plants'
@@ -42,8 +46,7 @@ class UsersController < ApplicationController
   end
 
   get '/logout' do
-      session.destroy
-      session[:user_id] = nil
+      session.clear
       redirect to '/login'
   end
 

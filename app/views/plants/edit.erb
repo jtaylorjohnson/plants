@@ -3,10 +3,10 @@
 <form action="/plants/<%=@plant.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label> Plant Name </label>
-  <input type="text" name="name" value="<%=@plant.name %>"> </br>
+  <input type="text" name="plant[name]" value="<%=@plant.name %>"> </br>
 
   <label> Plant Type </label>
-  <input type="text" name="type" value="<%=@plant.kind %>"> </br>
+  <input type="text" name="plant[kind]" value="<%=@plant.kind %>"> </br>
 
   <input type="submit" value="Update">
 </form>
