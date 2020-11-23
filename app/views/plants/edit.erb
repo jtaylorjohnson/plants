@@ -1,6 +1,7 @@
 <h1>Edit <%= @plant.name %></h1>
 
 <form action="/plants/<%=@plant.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <label> Plant Name </label>
   <input type="text" name="name" value="<%=@plant.name %>"> </br>
 
