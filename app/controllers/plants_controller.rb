@@ -16,7 +16,7 @@ class PlantsController < ApplicationController
 
   post "/plants" do
     redirect_if_not_logged_in
-    Plant.create(params)
+    Plant.create(name:)
     redirect "/plants"
   end
 
@@ -38,7 +38,7 @@ class PlantsController < ApplicationController
   post "/plants/:id" do
     redirect_if_not_logged_in
     @plant = Plant.find(params[:id])
-    @plant.update(params.select{|p|p=="name" || p=="type"})
+    @plant.update(params.select{|p|p=="name" || p=="kind"})
     redirect "/plants/#{@plant.id}"
   end
 
