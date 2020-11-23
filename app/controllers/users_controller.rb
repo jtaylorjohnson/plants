@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
   # GET: /users/5
   get "/users/:id" do
-    erb :"/users/show.html"
+    if !logged_in?
+      redirect '/plants'
   end
 
   # GET: /users/5/edit
