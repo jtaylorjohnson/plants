@@ -24,14 +24,14 @@ class PlantsController < ApplicationController
   get "/plants/:id" do
     redirect_if_not_logged_in
     @plant = Plant.find(params[:id])
-    erb :"/plants/show.html"
+    erb :"/plants/show"
   end
 
   # GET: /plants/5/edit
   get "/plants/:id/edit" do
     redirect_if_not_logged_in
     @plant = Plant.find(params[:id])
-    erb :"/plants/edit.html"
+    erb :"/plants/edit"
   end
 
   # PATCH: /plants/5

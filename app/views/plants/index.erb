@@ -1,1 +1,5 @@
-<h1>This is the Model's index page.</h1>
+<% @plants.each do |p| %>
+    <%= p.name %><br />
+    <%= p.type %> <br />
+    <a href="/plants/<%=p.id%>/edit">Edit</a>
+<% end %>
