@@ -40,6 +40,16 @@ class PlantsController < ApplicationController
     end
   end
 
+  get "/plants/:id/delete" do
+    redirect_if_not_logged_in
+    @plant = Plant.find(params[:id])
+    if session[:user_id] == @plant.user_id
+      erb :"/plants/delete"
+    else
+      "That's not your plant!"
+    end
+  end
+
 
   patch "/plants/:id" do
     redirect_if_not_logged_in
